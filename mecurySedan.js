@@ -17,8 +17,7 @@ class car extends Vehicle {
     }
 
     loadPassenger(num){
-        let availableRoom;
-        if (passenger < this.maximumPassengers){
+        if (this.passenger < this.maximumPassengers){
             availableRoom = true;
             return availableRoom;
         }
@@ -26,18 +25,15 @@ class car extends Vehicle {
     }
 
     start(){
-        if(fuel > 0){
+        if(this.fuel > 0){
             return true;
     }
 
     scheduleService(mileage){
-        let timeForMaintenance;
-        if(mileage > 30000){
-            timeForMaintenance = true;
-            return timeForMaintenance;
+        if(this.mileage > 30000){
+            return true;
         } else{
-            timeForMaintenance = false;
-            return timeForMaintenance;
+            return false;
         }
     }
 
